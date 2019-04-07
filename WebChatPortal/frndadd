@@ -1,0 +1,16 @@
+ k=db.users.findOne({username:'varsha'})
+ m=db.friends.findOne({_id : k.friends})
+ db.friends.update({_id:m._id},{$addToSet:{friends:"mahathi"}})
+ same on the other person's side
+ 
+ to find msgs
+  db.msgs.find({"$and":[{"$or":[{from:'varsha'} , {from:'mahathi'}]},{$or:[{to:'varsha'},{to:'mahathi'}]}]})
+  
+  //
+  Friend.update({_id:req.user.friends},{$push:{requestTo:req.params.name}},done);
+  
+  
+  
+  //TODO
+  * add error messages in register page
+  * 

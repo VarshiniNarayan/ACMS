@@ -1,0 +1,6 @@
+//layout 
+<% if(%> <%=errors %> <%){%> 
+<% Object.keys(%><%=errors %><%).forEach(function(error){ %>
+<div class="alert alert-danger"><%= error.msg %></div>
+<% }) %>
+<% } %>

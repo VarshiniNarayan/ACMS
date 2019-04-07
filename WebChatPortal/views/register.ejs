@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    </head>
+<body>
+  <div class="container">
+  <%- messages('msg',locals)%>  
+  <h1>register</h1>
+      
+      <form method="POST" action="/register">
+          <div>
+          <label>Name:     
+          <input type="text" name="name"/>
+          </label> 
+          </div>
+          <div>
+          <label>UserName:   
+          <input type="text" name="username"/>
+          </label> 
+          </div>
+          <div>
+          <label>Phone:     
+          <input type="tel" name="phone" pattern="^\d{10}$"/>
+          </label> 
+          </div>
+          <div>
+          <label>Email id:     
+          <input type="email" name="email"/>
+          </label> 
+          </div>
+          <div>
+          <label>Password:     
+          <input type="password" name="password"/>
+          </label> 
+          <label>Confirm Password:
+          <input type="password" name="password2"/>
+          </label>
+          </div>
+          <input type="submit"/>
+      </form>
+    </div>
+    </body>
+</html>

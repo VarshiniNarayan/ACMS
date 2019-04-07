@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>Invite</title>
+</head>
+<body>
+<h1>Invite your friends:</h1>
+<form action="/invite" method="POST"> 
+<label>Enter email id here:
+<input type="email" name="mail" placeholder="abc@gmail.com"/>
+</label>
+<input type="hidden" name="nam" value="<%= user%>" />    
+<input type="submit" value="send"/>    
+</form>
+</body>
+</html>

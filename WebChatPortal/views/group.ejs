@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Group</title>    
+</head>
+<body>
+<%- messages('msg',locals)%>
+<form action="group" method="POST">
+<label>Group name:
+<input type="text" name="grpname"/>  
+</label>
+Select members:
+<%t = friends %><% t.forEach(function(item){ %>
+<label><%= item %>
+<input type="checkbox" name="list" value="<%= item %>"/>
+</label>
+<% }); %>
+
+<input type="submit" value="Create group" />
+</form>    
+</body>
+</html>

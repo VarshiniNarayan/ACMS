@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    </head>
+<body>
+  <div class="user">
+  <%- messages('msg',locals)%>
+ <header class="user_header">    
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        <h1 class="user__title">WeChat Chat App</h1>
+</header>  
+      <form method="post" , action="/" class="form">
+      <div class="form_group">
+          <label>UserName
+          <input type="text" name="username"/>
+          </label>  
+      <div>
+          <label>Password
+          <input type="password" name="password" />
+          </label>
+      </div>
+          <input type="submit" value="Log In"/>
+      </div>
+      </form>      
+          <form method="" action="/register">
+          <input type="submit" id="reg" value="Register"/> 
+          </form>
+      
+          <form method="" action="/forgot">
+          <input type="submit" id="forgot" value="Forgot Password"/>
+          </form> 
+         
+          
+      
+      

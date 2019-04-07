@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+    Home Page    
+    </title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
+        </script>
+    </head>
+    <body>
+        <%- messages('msg',locals)%>
+        <% t= user.username %>
+        <input type='hidden' value="<%= t %>" id="dont" />
+        <input type='hidden' value="<%= friends.requestTo %>" id="donn" />
+        <a href="/logout">Logout</a><br/>
+        <a href="/invite" >Invite</a>
+        <a href="/group">New Group</a>
+        <input type="text" placeholder="search" id="search"/>
+        <div id="serc">
+        </div>
+        
+        <div id="friends">
+             <% tt = friends.friends %><% tt.forEach(function(item){ %>
+             <div id="frns">
+                   <a class="fr" href="/each/<%= item %>"><%= item %></a>
+             </div>   
+             <%  }) %>
+             <% ty = user.group %><% ty.forEach(function(item){ %>
+              <div id="frns">
+                   <a class="fr" href="/groupchat/<%= item %>"><%= item %></a>
+             </div>   
+             <% }) %>
+        </div>
+        
+        <script src="/home.js"></script>
+    </body>
+</html>

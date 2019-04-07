@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title> Chat Page</title>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
+        </script>
+       
+    </head>
+    <body>
+    <a href="/home">HOME</a> 
+    <button onclick='ex()'>EXIT GROUP</button>
+    <input type='hidden' value="<%= me %>" id="mme"/>
+    <input type='hidden' value="<%= name %>" id="imme"/>
+    <div id="first">
+        <ul>
+          <% for(var i=0; i<items.length; i++) { ir="two";%>
+         <% if(items[i].from==me) ir="one"%>    
+         <li id='<%=ir%>'><%= items[i].from %><br/>
+         <% if(items[i].msgtype=='text'){ %>
+             <p><%= items[i].body %></p>     
+         <% } %>             
+         <% if(items[i].msgtype=='img'){ %>
+             <img src='<%= items[i].body %>'/>
+        <% } %>
+        <% if(ir=="one"){ %>
+        <p>delivered <br/>
+        <a href="/delete/?id=<%= items[i]._id%>&name=<%=name%>&type=groupchat">delete</a>
+        <% } %>
+        <%= items[i].createdAt %>    
+        </p>
+        </li>
+         <% } %>
+        </ul>
+          <div id="second">
+               <div id="output">
+                   
+               </div>
+               <div id="feedback"> 
+               </div> 
+          </div>
+        <input type="file" id="img" onchange='psych(event)' accept='image/*'/>
+          <div id="gt">
+          <input type="text" id="message"/>
+          </div>
+          <button id="send">SEND</button>
+    </div>
+     <script src="/groupchat.js"> </script>  
+    </body>
+</html>
