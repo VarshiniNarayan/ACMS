@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>New Password</title>   
+
+</head>
+<body>
+<form action="newpwd" method="post">
+  <label>  
+      New Password:
+      <input type="password" id="newpwd" name="newpwd"/>    
+  </label>
+   <label>  
+      Confirm New Password:
+      <input type="password" id="newpwd1"/>    
+  </label>
+    <input type="button" onclick="check()" value="Change"/> 
+</form>    
+<script>
+function check(){
+    form=document.getElementsByTagName("form");
+    form=form[0];
+    a=document.getElementById("newpwd").value;
+    b=document.getElementById("newpwd1").value;
+    console.log("Password");
+    
+    if(a==b){
+     console.log(a);
+    console.log(b);
+        form.submit();
+    }
+    else{
+        //error msg
+        res.redirect("/newpwd");
+    }
+        
+}    
+</script>
+</body>
+</html>

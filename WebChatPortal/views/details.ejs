@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Group Details</title>
+</head>
+<body>
+    <a href="/groupchat/<%= grp.name %>">Back to chat</a><br/>
+Group name: <%= grp.name %> <br/>
+Group admin: <%= grp.admin %> <br/>
+Users:
+<ul> 
+<% grp.users.forEach(function(groot){ %>
+    <li><%= groot %></li>
+<%    }) %>
+</ul>   
+</body>
+</html>
