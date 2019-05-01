@@ -1,0 +1,24 @@
+div#success{
+        width:auto;
+        height:auto;
+        margin-left:5px;
+        margin-bottom:50px;
+        padding:5px 5px;
+        border-radius: 6px;
+        border:solid green;
+        font-family: "Roboto",sans-serif;
+        color: green;
+    text-align: center;
+    }   
+div#error{
+        width:auto;
+        height:auto;
+        padding:5px 5px;
+        border-radius: 6px;
+        margin-left:5px;
+        margin-bottom:50px;
+        border:solid red;
+        font-family: "Roboto",sans-serif;
+        color: red;
+    text-align: center;
+    }   

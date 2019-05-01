@@ -32,6 +32,15 @@ body {
     animation: arrive 500ms ease-in-out 0.7s forwards;
 }
 
+.container {
+    text-align: center;
+    font-size: 8px;
+    margin-bottom: -5px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: white;
+}
+
 .user__title {
     font-size: $font-size;
     margin-bottom: -10px;
@@ -40,6 +49,7 @@ body {
 }
 
 .form {
+    font-size: $font-size;
     margin-top: 40px;
     border-radius: 6px;
     overflow: hidden;
@@ -55,6 +65,7 @@ body {
 }
 
 .form__input {
+    font-size: $font-size;
     display: block;
     width: 100%;
     padding: 20px;
@@ -84,17 +95,6 @@ body {
     &:hover {
         background: darken($color-primary, 5%);
     }
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-    
-}
-
-span.regs {
-    float: left;
-    padding-top: 16px;
 }
 
 @keyframes NO {

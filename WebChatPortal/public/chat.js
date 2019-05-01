@@ -31,8 +31,8 @@ var psych = function(event){
 data='';
 socket.emit('joinRoom',{room:f.value});
 send.addEventListener("click",function(){
-    if(message.value!=''){
-        var message = document.getElementById('message');
+ message=document.getElementById('message');
+    if(message!=null && message.value!=''){
         socket.emit('private',{
            from:x.value,
            to:to.value,
@@ -41,19 +41,21 @@ send.addEventListener("click",function(){
            type:'text'
       
          },function(data){
+           console.log(data);
            window.data=data;
      });
      setTimeout(function(){
-     console.log(data);
+     console.log("here",message.value);
      if(data){
-     output.innerHTML+= "<li id='one'>"+data.from+"<br/>"+data.body+"<br/><span>delivered</span><a href='/delete/?id="+data._id+"&name="+data.to+"&type=each'>delete</a></li>" ;
+     output.innerHTML+= "<div id='one'>"+x.value+"<br/>"+message.value+"<br/><span><img src='/delvd.png' height='20px' width='20px'/></span><a href='/delete/?id="+data._id+"&name="+data.to+"&type=each'><img src='/delete.jpg' height='20px' width='20px' id='del'/></a></div>" ;
      //Change data.createdAt
      }
      else{
-         output.innerHTML+= "<li id='one'>"+x.value+"<br/>"+message.value+"<br/><span>undelivered</span></li>" ;
+         output.innerHTML+= "<div id='one'>"+x.value+"<br/>"+message.value+"<br/>undelivered</div>" ;
      }
-     },200);
      message.value='';
+     },400);
+     
      data='';
     }
     else if(imd!=null){
@@ -68,27 +70,27 @@ send.addEventListener("click",function(){
      });
     setTimeout(function(){
     if(data){
-     output.innerHTML+= "<li id='one'>"+x.value+"<br/><img src='"+imd+"'/><br/><span>delivered</span><a href='/delete/?id="+data._id+"&name="+data.to+"&type=each'>delete</a></li>";
+     output.innerHTML+= "<div id='one'>"+x.value+"<br/><img src='"+imd+"'  id='op'/><span><img src='/delvd.png'id='e'' height='20px' width='20px'/></span><a href='/delete/?id="+data._id+"&name="+data.to+"&type=each'><img src='/delete.jpg' height='20px' width='20px' id='del'/></a></div>";
      }
     else{
-         output.innerHTML+= "<li id='one'>"+x.value+"<br/><img src='"+imd+"'/><br/><span>undelivered</span></li>" ;
+         output.innerHTML+= "<div id='one'>"+x.value+"<br/><img src='"+imd+"' height='180px' width='450px'/><br/>undelivered</div>" ;
      }
         
      imd=null;
      img.value=null;
      gt.innerHTML="<input type='text' id='message'/>"; 
      data='';
-    },200);
+    },500);
     }
                
 });
 socket.on('private',function(data){
-    console.log(data);
+    feedback.innerHTML='';
     if(data.msgtype=='text'){
-    output.innerHTML+= "<li id='two'>"+data.from+"<br/>"+data.body+" "+data.createdAt+" </li>";
+    output.innerHTML+= "<div id='two'>"+data.from+"<br/>"+data.body+" "+data.createdAt+" </div>";
     }
     else if(data.msgtype=='img'){
-    output.innerHTML+= "<li id='two'>"+data.name+"<br/><img src='"+data.body+"'/>"+data.createdAt+"</li>";
+    output.innerHTML+= "<div id='two'>"+data.name+"<br/><img src='"+data.body+"' id='op' height='180px' width='450px'/>"+data.createdAt+"</div>";
     }
    });
 message.addEventListener('keypress',function(){

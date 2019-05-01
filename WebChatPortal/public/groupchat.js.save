@@ -1,8 +1,10 @@
+
+
 var message = document.getElementById('message');
 var send = document.getElementById('send');
 var feedback = document.getElementById('feedback');
 var output = document.getElementById("output");
-var socket = io.connect("http://localhost:4000/group");
+var socket = io.connect("http://34.227.106.58:4000/group");
 var x= document.getElementById("mme");
 var f = document.getElementById("imme");
 var img = document.getElementById("img");
@@ -37,7 +39,6 @@ var psych = function(event){
 
 socket.emit('joinRoom',{room:f.value});
 send.addEventListener("click",function(){
-    message = document.getElementById('message');
     if(message.value!=''){
      socket.emit('private',{
            from:x.value,
@@ -79,14 +80,16 @@ send.addEventListener("click",function(){
      img.value=null;
      gt.innerHTML="<input type='text' id='message'/>"; 
      data=''; 
-  },1500);
+  },600);
      
  }
 });
 
 socket.on('private',function(data){
+    console.log(data);
     feedback.innerHTML='';
     if(data.msgtype=='text'){
+    console.log(data);
     output.innerHTML+= "<li id='two'>"+data.from+"<br/>"+data.body+" "+data.createdAt+" </li>";
     }
     else if(data.msgtype=='img'){

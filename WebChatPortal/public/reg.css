@@ -1,0 +1,17 @@
+
+$font-size:     20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto",sans-serif;
+    font-size:   30px;
+    background-size: 200% 100% !important;
+    animation: move 10s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background:#f4f7f6;
+    height: 100vh
+}

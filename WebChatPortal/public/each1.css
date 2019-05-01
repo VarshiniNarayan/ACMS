@@ -1,0 +1,224 @@
+.topnav{
+    background-color: white;
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    width:100%;
+}
+.topnav ul li{
+    list-style: none;
+}
+.topnav ul{
+    margin-right: 30px;
+}
+.topnav ul li a{
+    text-decoration: none;
+    display:block;
+    text-align: center;
+    padding: 12px 14px;
+    color:#6600ff;
+    font-family: "Roboto",sans-serif;
+    font-size: 18px;
+    margin-right: 40px;
+    margin-top: 10px;
+    
+}
+.topnav ul li a:hover{
+    color: #6600ff;
+    border-radius: 10px;
+    border: 3 3 3 3;
+    border:solid #6600ff;
+    -webkit-transform-origin:0%  100%;
+}
+
+.topnav img{
+    margin-left:0;
+    float:left;
+}
+.topnav ul li {
+    float:right;
+}
+.topnav ul li span{
+    float: left;
+    font-family: "Roboto",sans-serif;
+    font-size:25px;
+    margin-top: 20px;
+    margin-right: 600px;
+    color:#6600ff;
+}
+html{
+    font-family: "Roboto",sans-serif;
+    font-size:15px;
+     background-color:#f7f4f6; 
+    
+}
+.first{
+    width: 100%;
+    position: absolute;
+    top:100px;
+    background-color:#f7f4f6; 
+}
+
+.first a{
+    
+    text-decoration: none;
+    display: block;
+    padding:12px 14px;
+     font-family: "Roboto",sans-serif;
+    font-size:15px;
+}
+.btn:hover{
+    color:#6600ff;
+}
+.first .btn{
+      margin-left: 20px;
+      margin-top: -35px;
+}
+img{
+    border-radius: 6px;
+}
+
+.msg{
+    margin-top: 20px;
+    margin: 5px 5px;
+    box-sizing: border-box;
+    height:auto;
+    width:500px;
+    font-family: "Roboto",sans-serif;
+    font-size:15px;
+   
+    border-radius: 6px;
+}
+
+span#one{
+    color:#006622;
+}
+span#two{
+    color:#0047b3;
+}
+.msg#two{
+    position: relative;
+    margin-left:800px;
+    padding-top: 10px;
+    text-align: right;
+    padding-right:10px;
+    background-color: #b3ffe6;
+    color: black;
+     font-family: "Roboto",sans-serif;
+    font-size:18px;
+}
+
+.msg#one{
+     margin-left: 150px;
+    padding-top: 10px;
+    background-color:  #99ff66;
+    padding-left: 20px;
+    text-align: left;
+    color: black;
+     font-family: "Roboto",sans-serif;
+    font-size:18px;
+}
+
+div#feedback{
+    color:#adad85;
+}
+div#two{
+        margin-top: 20px;
+    margin: 5px 5px;
+    box-sizing: border-box;
+    height:auto;
+    width:500px;
+    font-family: "Roboto",sans-serif;
+    font-size:15px;
+   
+    border-radius: 6px;
+     position: relative;
+    margin-left:800px;
+    padding-top: 10px;
+    text-align: right;
+    padding-right:10px;
+    background-color: #b3ffe6;
+    color: black;
+     font-family: "Roboto",sans-serif;
+    font-size:18px;
+}
+div#one{
+        margin-top: 20px;
+    margin: 5px 5px;
+    box-sizing: border-box;
+    height:auto;
+    width:500px;
+    font-family: "Roboto",sans-serif;
+    font-size:15px;
+   
+    border-radius: 6px;
+     margin-left: 150px;
+    padding-top: 10px;
+    background-color:  #99ff66;
+    padding-left: 20px;
+    text-align: left;
+    color: black;
+     font-family: "Roboto",sans-serif;
+    font-size:18px;
+}
+input#message{
+    width:450px;
+    margin-left:150px;
+    padding: 15px 15px;
+    border-radius:6px;
+      font-family: "Roboto",sans-serif;
+    font-size:18px;
+    border:solid  #49C5B6;
+}
+img#send{
+    margin-left: 720px;
+    position: relative;
+    margin-top: -100px;
+    margin-bottom: 26px;
+    position: static;
+}
+input#img{
+visibility: hidden;  
+}
+label img{
+     margin-top: -40px;
+    margin-left:660px;
+    margin-bottom:0px;
+    position: static;
+}
+output#one{
+     margin-left: 150px;
+    padding-top: 10px;
+    background-color:  #99ff66;
+    padding-left: 20px;
+    text-align: left;
+    color: black;
+     font-family: "Roboto",sans-serif;
+    font-size:18px;
+}
+output#two{
+     position: relative;
+    margin-left:800px;
+    padding-top: 10px;
+    text-align: right;
+    padding-right:10px;
+    background-color: #b3ffe6;
+    color: black;
+     font-family: "Roboto",sans-serif;
+    font-size:18px;
+}
+
+img#del{
+    height: 20px;
+    width:20px;
+    margin-left: 30px;
+    margin-top: -10px;
+}
+img#e{
+     height: 20px;
+    width:20px;
+    margin-left: 10px;
+    position: relative;
+    margin-bottom:-90px;
+}
+

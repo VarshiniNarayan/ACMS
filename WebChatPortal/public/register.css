@@ -1,5 +1,4 @@
 
-$font-size:     20px;
 * {
     margin: 0;
     padding: 0;
@@ -8,11 +7,11 @@ $font-size:     20px;
 
 body {
     font-family: "Roboto",sans-serif;
-    font-size:   30px;
+    font-size: 20px;
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
-    background:#f4f7f6;
+    background: #f4f7f6;
     height: 100vh
 }
 
@@ -25,26 +24,32 @@ body {
 .user_header {
     text-align: center;
     opacity: 0;
-     margin-bottom: -10px;
-    margin-top:50px;
     transform: translate3d(0, 500px, 0);
     animation: arrive 500ms ease-in-out 0.7s forwards;
 }
+
+.user__title {
+    font-size:20px;
+    margin-bottom: -10px;
+    font-weight: 500;
+    color: white;
+}
+
+.user {
+    font-size:20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 10vh auto;
+}
+
 img{
     position: relative;
     margin-bottom: -10px;
     margin-top: -70px;
-    margin-left: -30px;
+    margin-left: -10px;
 }
-.user__title {
-    font-size: 50px;
-    margin-bottom: -10px;
-    font-weight: 500;
-    color: greenyellow;
-    font-family: 'Nunito', sans-serif,bold;
-}
-
 .form {
+    font-size:30px;
     margin-top: 40px;
     border-radius: 6px;
     overflow: hidden;
@@ -53,33 +58,33 @@ img{
     animation: arrive 500ms ease-in-out 0.9s forwards;
 }
 
-.form__no {
+.form--no {
     animation: NO 1s ease-in-out;
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }
 
 .form__input {
+     font-size:20px;
     display: block;
     width: 100%;
     padding: 20px;
-    font-size: 15px;
-    font-family: "Roboto",sans-serif;
+    font-family:  "Roboto",sans-serif;
     -webkit-appearance: none;
     border: 0;
     outline: 0;
-    transition: 0.1s;
+    transition: 0.3s;
     
     &:focus {
         background: darken(#fff, 3%);
     }
 }
+
 .btn {
     display: block;
     width: 100%;
     padding: 20px;
     font-family: "Roboto",sans-serif;
-    font-size: 15px;
     -webkit-appearance: none;
     outline: 0;
     border: 0;
@@ -88,17 +93,16 @@ img{
     transition: 0.3s;
     
     &:hover {
-        background: darken( #6600ff;, 5%);
+        background: darken(#49C5B6, 5%);
     }
 }
 
 .btn2 {
     display: block;
-    border-radius: 6px;
+    
     width: 50%;
     padding: 20px;
-    font-size: 15px;
-    font-family: "Roboto",sans-serif;
+    font-family:  "Roboto",sans-serif;
     -webkit-appearance: none;
     outline: 0;
     border: 0;
@@ -106,8 +110,9 @@ img{
     color: white;
     background: #49C5B6;
     transition: 0.5s;
+    
     &:hover {
-        background: darken( #6600ff;, 5%);
+        background: darken(#49C5B6, 5%);
     }
 }
 
