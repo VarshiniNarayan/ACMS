@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+          <link rel="icon" type="image/gif/png" href="logo.jpg">
+        <title>Register</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <link href="/warn.css" rel="stylesheet">
+        <link rel="stylesheet" href="/register.css" />
     </head>
 <body>
-  <div class="container">
+  <div class="user">
   <%- messages('msg',locals)%>  
-  <h1>register</h1>
+ <img src="/done.png" height="200px" width="400px" />
       
-      <form method="POST" action="/register">
-          <div>
-          <label>Name:     
-          <input type="text" name="name"/>
-          </label> 
+      <form method="POST" action="/register" class="form">
+          <div class="form_group">
+          <input type="text" name="name" class="form__input" placeholder="Full Name"/>
+          </div>
+          <div>   
+          <input type="text" name="username" class="form__input" placeholder="Username"/> 
+          </div>
+          <div>     
+          <input type="tel" name="phone" pattern="^\d{10}$" class="form__input" placeholder="Phone Number"/>
+          </div>
+          <div>    
+          <input type="email" name="email" class="form__input" placeholder="Email id"/>
+          </div>
+          <div>   
+          <input type="password" name="password" class="form__input" placeholder="Password"/>
           </div>
           <div>
-          <label>UserName:   
-          <input type="text" name="username"/>
-          </label> 
+          <input type="password" name="password2" class="form__input" placeholder="Confirm Password"/>
           </div>
-          <div>
-          <label>Phone:     
-          <input type="tel" name="phone" pattern="^\d{10}$"/>
-          </label> 
-          </div>
-          <div>
-          <label>Email id:     
-          <input type="email" name="email"/>
-          </label> 
-          </div>
-          <div>
-          <label>Password:     
-          <input type="password" name="password"/>
-          </label> 
-          <label>Confirm Password:
-          <input type="password" name="password2"/>
-          </label>
-          </div>
-          <input type="submit"/>
+          <input type="submit" class="btn" value="Register"/>
       </form>
     </div>
     </body>

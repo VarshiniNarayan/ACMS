@@ -5,33 +5,52 @@
     Home Page    
     </title>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
+         <link href="/warn.css" rel="stylesheet">
         </script>
+    
+    <link href="/home.css" rel="stylesheet"/>
     </head>
     <body>
+        
         <%- messages('msg',locals)%>
         <% t= user.username %>
         <input type='hidden' value="<%= t %>" id="dont" />
         <input type='hidden' value="<%= friends.requestTo %>" id="donn" />
-        <a href="/logout">Logout</a><br/>
-        <a href="/invite" >Invite</a>
-        <a href="/group">New Group</a>
-        <input type="text" placeholder="search" id="search"/>
-        <div id="serc">
+        <div class="topnav">
+            <img src="/done.png" height="100px" width="200px"/>
+        <ul>
+        
+        <li><a href="/me">Me</a></li>
+        <li><a href="/logout" >Logout</a></li>
+        <li><a href="/invite" class="btn">Invite</a></li>
+        <li><a href="/group" class="btn">New Group</a></li>
+        </ul>
         </div>
         
+         <div class="form__group">
+        <input type="text" placeholder="  Username" id="search" class="search"/>
+        <div id="serc" class="serc">
+        </div>
+        </div>
+        <div class="b">
         <div id="friends">
              <% tt = friends.friends %><% tt.forEach(function(item){ %>
-             <div id="frns">
+             <div id="frns" class="fr">
                    <a class="fr" href="/each/<%= item %>"><%= item %></a>
+                 <% if(online.has(item)){ %>
+                 online
+                 <% } %>
+                
              </div>   
              <%  }) %>
              <% ty = user.group %><% ty.forEach(function(item){ %>
-              <div id="frns">
+              <div id="frns" class="fr">
                    <a class="fr" href="/groupchat/<%= item %>"><%= item %></a>
+                
              </div>   
              <% }) %>
         </div>
-        
+       </div>
         <script src="/home.js"></script>
     </body>
 </html>

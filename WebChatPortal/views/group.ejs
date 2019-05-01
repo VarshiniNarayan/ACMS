@@ -1,21 +1,33 @@
 <html>
 <head>
-<title>Group</title>    
+<title>Group</title>  
+<link rel="stylesheet" href="/group.css"/>
+<link href="/warn.css" rel="stylesheet">
 </head>
 <body>
+<div class="user">
+   
 <%- messages('msg',locals)%>
-<form action="group" method="POST">
-<label>Group name:
-<input type="text" name="grpname"/>  
-</label>
-Select members:
+     <header class="user__header">
+         <a href="/"><button class="btn">Go Home</button></a>
+    </header>
+<form class="form" action="group" method="POST">
+       <div class="form__group">
+<input type="text" name="grpname" placeholder="Group Name" class="form__input"/>  
+    </div>
+    <div class="header">
+<h2 class="header">Select Members:</h2>
+    <div class="list">
 <%t = friends %><% t.forEach(function(item){ %>
 <label><%= item %>
 <input type="checkbox" name="list" value="<%= item %>"/>
 </label>
 <% }); %>
-
-<input type="submit" value="Create group" />
-</form>    
+    </div>
+        </div>
+<input type="submit" value="Create Group" class="btn" />
+   
+</form>  
+     </div>
 </body>
 </html>

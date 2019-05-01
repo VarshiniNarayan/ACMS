@@ -4,27 +4,22 @@
        <title> Chat Page</title>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
         </script>
-        <script>
-            function m(){
-                window.scroll(0,10000);
-                setTimeout('m();',10000);
-            }
-        </script>    
        <link rel="stylesheet" href="/each1.css"/>
     </head>
-    <body onLoad="m();">
-      
-    <div class="topnav">
+    <body>
+        <header>
+    <div class="chat-header clearfix">
         <img src="/done.png" alt="" height="100px" width="200px"/>
         <ul>
-            
    <li><a href="/home">HOME</a></li> 
     <li><a href="/download/?user1=<%= me %>&user2=<%= to %>">DOWNLOAD</a></li>
-            <li><span><%= to %></span></li>
         </ul>
-      
+         <div class="chat-about">
+          <div class="chat-with">Chat with <%= to %></div>
+          
+        </div>
     </div>   
-        
+            </header>
     <input type='hidden' value="<%= to %>" id="to"/>
     <input type='hidden' value="<%= me %>" id="mme"/>
     <input type='hidden' value="<%= roome %>" id="imme"/>
@@ -60,17 +55,15 @@
                <div id="feedback"> 
                </div> 
           </div>
-        
-          <div id="gt">
-          <input type="text" id="message"/>
-          </div>
-         <label id="file">
+        <label id="file">
           <img src="/img.png" height="40px" width="40px"/>
             <input type="file" id="img" onchange='psych(event)' accept='image/*'/>
             </label>
         
+          <div id="gt">
+          <input type="text" id="message"/>
+          </div>
           <img src="/send.png" height="40px" width="40px" id="send"/>
-        
     </div>
      <script src="/chat.js"> </script>  
      

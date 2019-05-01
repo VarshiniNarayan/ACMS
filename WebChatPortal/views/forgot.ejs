@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <link rel="stylesheet" href="forgot">
+       <link rel="icon" type="image/gif/png" href="logo.jpg"> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <link rel="stylesheet" href="/login.css" />
+        <link href="/warn.css" rel="stylesheet">
+        <style>
+            p{
+                font-size:20px;
+            }
+        </style>
     </head>
 <body>
-  <div class="container">
-        <h1> FORGOT PASSWORD</h1>
+  <div class="user">
+      <header class="user_header">
+          <%- messages('msg',locals)%>  
+          <img src="/done.png" height="200px" width="400px" />
+        </header>
 		<p> Your password will be sent to your registered mail-id <p>
-		<form method="POST" action="/forgot">
-		<label> Enter your username:
-		<input type="text" name='user'/>
-		</label>
-		<input type="submit" value="Enter"/>
+		<form method="POST" action="/forgot" class="form">
+		 <div class="form_group">
+		<input type="text" name='user' class="form__input" placeholder="Username"/>
+		</div>
+		<input type="submit" value="Send" class="btn"/>
 		</form>
   </div>
 </body>

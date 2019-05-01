@@ -1,36 +1,47 @@
-<!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/gif/png" href="logo.jpg">
+        <title>Log In</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <link rel="stylesheet" href="/login.css" />
+        <link href="/warn.css" rel="stylesheet">
     </head>
 <body>
-  <div class="user">
-  <%- messages('msg',locals)%>
- <header class="user_header">    
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
-        <h1 class="user__title">WeChat Chat App</h1>
-</header>  
+    <div class="user">
+    <%- messages('msg',locals)%>   
+        <img src="/done.png" height="200px" width="400px" />
       <form method="post" , action="/" class="form">
       <div class="form_group">
-          <label>UserName
-          <input type="text" name="username"/>
-          </label>  
-      <div>
-          <label>Password
-          <input type="password" name="password" />
-          </label>
+          <input type="text" name="username" class="form__input" placeholder="Username"/>  
       </div>
-          <input type="submit" value="Log In"/>
+      <div class="form_group">
+          <input type="password" name="password" class="form__input" placeholder="password"/>
       </div>
-      </form>      
-          <form method="" action="/register">
-          <input type="submit" id="reg" value="Register"/> 
-          </form>
+      <div class="form_group">
+          <input type="submit" value="Log In" class="btn"/>
+      </div>
+      </form>
+   
+     <hr>
+      <form action="/loginotp" method="get" class="form">
+          <div class="form_group">   
+                      <input type="text" name="uname" placeholder="Username" class="form__input" />
+          </div>
+          <div class="form_group">
+                    <input type="submit" value="Login with OTP" class="btn"/>
+          </div>
+      </form>
+            <form method="" action="/register">
+         <div class="form_group">
+          <input type="submit" id="reg" value="New Account?" class="btn2"/> 
+        </div>
+    </form>
       
-          <form method="" action="/forgot">
-          <input type="submit" id="forgot" value="Forgot Password"/>
-          </form> 
-         
-          
-      
-      
+    <form method="" action="/forgot" >
+         <div class="form_group">
+              <input type="submit" id="forgot" value="Forgot Password?" class="btn2"/>
+        </div>
+    </form> 
+      </div>
+    </body>
+   

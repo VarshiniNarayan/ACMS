@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<header>
+  <link rel="stylesheet" href="each.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
+        </script>
+       
+  </header>
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <button>Back Home</button>
+          <input type='hidden' value="<%= to %>" id="to"/>
+    <input type='hidden' value="<%= me %>" id="mme"/>
+    <input type='hidden' value="<%= roome %>" id="imme"/>
+        <div class="chat-about">
+          <div class="chat-with">Chat with <%= to %></div>
+          
+        </div>
+        
+      </div> 
+      
+      <div class="chat-history" id="first">
+        <ul>
+          <% for(var i=0; i<items.length; i++) { ir="two";%>
+         <% if(items[i].from==me) ir="one"%> 
+         <li class="clearfix" id='<%=ir%>'><%= items[i].from %><br/>
+            <div class="message-data align-right">
+              
+              <% if(ir=="one"){ %>
+              <span class="message-data-name" ><%= items[i].from %></span> <i class="fa fa-circle me"></i>
+              
+              <span class="message-data-name" >Delivered</span> <i class="fa fa-circle me"></i>
+             <a href="/delete/?id=<%= items[i]._id%>&name=<%=to%>&type=each">Delete</a>
+        <% } %>
+        <%= items[i].createdAt %>     
+            </div>
+          <% if(ir=="one"){%>
+            <div class="message one float-right">
+             <% if(items[i].msgtype=='text'){ %>
+             <p><%= items[i].body %></p>     
+         <% } %>             
+         <% if(items[i].msgtype=='img'){ %>
+             <img src='<%= items[i].body %>'/>
+        <% } %>
+          <% } %>
+            </div>
+           <% } %>
+             <% if(ir=="two") { %>
+               <div class="message two float-right">
+             <% if(items[i].msgtype=='text'){ %>
+             <p><%= items[i].body %></p>     
+         <% } %>             
+         <% if(items[i].msgtype=='img'){ %>
+             <img src='<%= items[i].body %>'/>
+        <% } %>
+          <% } %>
+            </div>
+          </li>
+          <% } %>
+     </ul>
+   </div> 
+   <div id="second" class="chat-history">
+              
+               <div id="output">
+                   
+               </div>
+               <div id="feedback" class="feedback">               
+               </div>   
+               </div>
+      
+      <div class="chat-message clearfix">
+        <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+                
+        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+        <i class="fa fa-file-image-o" id="img" onchange='psych(event)' accept='image/*'/>
+        
+        <button id="send">Send</button>
+
+      </div> 
+      
+    </div> 
+    
+  
+
+<script src="/chat.js"> </script> 
+</html>

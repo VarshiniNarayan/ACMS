@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>stream</title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
+</script>
+<script src="/socket.io-stream.js"></script>
+<script>
+    var socket=io.connect('/chat')
+    function change(event){
+        file = event.target.files[0];
+        console.log("HERE");
+        var stream = ss.createStream();
+        ss(socket).emit('image',stream,{name:file.name});
+        ss.createBlobReadStream(file).pipe(stream);
+    }
+</script>
+</head>
+<body>
+<label>FILE:   
+<input type="file" id="file" onchange="change(event)"/>   
+</label> 
+</body>
+</html>

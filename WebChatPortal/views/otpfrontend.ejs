@@ -1,0 +1,27 @@
+<html>
+<head><title>Login with OTP</title></head>
+<link rel="stylesheet" href="/otp.css"/>
+<body>
+<div class="user">
+    <a href="/"><button class="btn3">Go Home</button></a>
+    <header class="user__header">
+        <img src="/done.png" alt="" height="200px" width="400px"/>
+        
+        <h2 class="OTP__info">Enter OTP you received via sms to verify your registration</h2>
+    </header>
+    
+    <form class="form" action="/loginotp" method="post">
+         <div class="form__group">
+            <input type="otp" placeholder="One Time Password" class="form__input"  name="otp"/>
+        </div>
+       <input type="hidden" value="<%= name %>" name="name"/>
+        
+        <input type="submit" class="btn" value="Enter OTP"/>
+    </form>
+        <a href="/loginotp"><button class="btn2">Regenerate OTP</button></a>
+    
+</div>
+    </body>
+</html>
+
+

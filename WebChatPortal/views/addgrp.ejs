@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ADD</title>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
+        </script>
+    <link href="/group.css" rel="stylesheet">
+</head>
+    <body>
+    <div class="user">
+    <input type='hidden' value="<%= t %>" id="dont" />
+    <input type='hidden' value="<%= grp.users %>" id="users" />
+    <input type='hidden' value="<%= friends %>" id="friends" />
+    <a href="/"><button class="btn">HOME</button></a>
+    <form action="/addgrp" method="POST" class="form">
+    <input type="hidden" value="<%= grp.name %>" name="grpname" />
+    <div class="header">
+   <h2 class="header">Select Members:</h2>
+    <% count=0 %>
+    <div class="list">
+    <% friends.forEach(function(item){ if(!((grp.users).includes(item))){  %> 
+    <% count=count+1; %>    
+    <label><%= item %>
+    <input type="checkbox" name="list" value="<%= item %>"/>
+    </label>
+    <% }}); 
+        
+     if(count==0){ %>
+        <p>All your friends are already members of <%= grp.name %></p>
+        </div>
+        <% }else{ %>
+   </div>
+        <input type="submit" value="ADD" class="btn"/>
+        
+        <% } %>
+        </form>
+        </div>
+    </body>
+</html>

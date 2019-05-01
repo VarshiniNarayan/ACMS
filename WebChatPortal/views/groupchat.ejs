@@ -4,33 +4,54 @@
        <title> Chat Page</title>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
         </script>
+        <link rel="stylesheet" href="/each2.css"/>
        
     </head>
-    <body>
-    <a href="/home">HOME</a> 
-    <button onclick='ex()'>EXIT GROUP</button>
+     <script>
+            function m(){
+                window.scroll(0,10000);
+                setTimeout('m();',1000);
+            }
+        </script>  
+    <body onLoad="m();">
+        <div class="topnav">
+            <img src="/done.png" alt="" height="100px" width="200px"/>
+            <ul>
+    <li><a href="/home">HOME</a></li>
+    <% if((admin)==me){ %>
+    <li><a href="/addgrp/?name=<%= name %>">ADD</a></li>
+    <% }    %>
+    <li><a href="/download/?user2=<%= name %>">DOWNLOAD</a></li>
+    <% if((admin)!=me){ %>
+    <li><button onclick='ex()'>EXIT GROUP</button></li>
+                <% } %>
+       <li> <a href="/details/?grp=<%= name %>"><%= name %></a>  </li>   
+           
+    
+                 </ul>
+             </div>
+   
     <input type='hidden' value="<%= me %>" id="mme"/>
     <input type='hidden' value="<%= name %>" id="imme"/>
-    <div id="first">
-        <ul>
+    <div id="first" class="first">
           <% for(var i=0; i<items.length; i++) { ir="two";%>
          <% if(items[i].from==me) ir="one"%>    
-         <li id='<%=ir%>'><%= items[i].from %><br/>
+         <div id='<%=ir%>'><%= items[i].from %><br/>
          <% if(items[i].msgtype=='text'){ %>
              <p><%= items[i].body %></p>     
          <% } %>             
          <% if(items[i].msgtype=='img'){ %>
-             <img src='<%= items[i].body %>'/>
+             <img src='<%= items[i].body %>' height='180px' width='450px'/>
         <% } %>
         <% if(ir=="one"){ %>
-        <p>delivered <br/>
-        <a href="/delete/?id=<%= items[i]._id%>&name=<%=name%>&type=groupchat">delete</a>
+        <p><img src="/delvd.png" height="20px" width="20px"/>
+        <a href="/delete/?id=<%= items[i]._id%>&name=<%=name%>&type=groupchat"><img src="/delete.jpg" height="20px" width="20 px"/></a>
         <% } %>
-        <%= items[i].createdAt %>    
+        <% mydate= new Date(items[i].createdAt) %>
+        <span><%= mydate.toLocaleString(); %></span>  
         </p>
-        </li>
+        </div>
          <% } %>
-        </ul>
           <div id="second">
                <div id="output">
                    
@@ -38,11 +59,15 @@
                <div id="feedback"> 
                </div> 
           </div>
-        <input type="file" id="img" onchange='psych(event)' accept='image/*'/>
+       
           <div id="gt">
           <input type="text" id="message"/>
           </div>
-          <button id="send">SEND</button>
+         <label id="file">
+          <img src="/img.png" height="40px" width="40px"/>
+            <input type="file" id="img" onchange='psych(event)' accept='image/*'/>
+            </label>
+          <img src="/send.png" height="40px" width="40px"/>
     </div>
      <script src="/groupchat.js"> </script>  
     </body>

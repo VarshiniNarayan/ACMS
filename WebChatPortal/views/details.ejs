@@ -2,16 +2,29 @@
 <html>
 <head>
 <title>Group Details</title>
+<link rel="stylesheet" href="/details.css"/>
 </head>
 <body>
-    <a href="/groupchat/<%= grp.name %>">Back to chat</a><br/>
-Group name: <%= grp.name %> <br/>
-Group admin: <%= grp.admin %> <br/>
-Users:
-<ul> 
+    <img src="/done.png" alt="" height="200px" width="400px"/>
+    <table>
+	<tr>
+		<td colspan="3">
+			<div class="name"><%= grp.name %></div>
+		</td>
+	</tr>
+	<tr>
+		<td class="details-td">
+			<div class="label">Group Admin: </div><div class="grp"><%= grp.admin %></div>
+			<br><div class="label">Users: </div>
+			<ul> 
 <% grp.users.forEach(function(groot){ %>
     <li><%= groot %></li>
 <%    }) %>
 </ul>   
+<a href="/groupchat/<%= grp.name %>"><button class="btn" type="button">Back To chat</button></a>	
+		</td>
+	
+	</tr>
+</table>
 </body>
 </html>

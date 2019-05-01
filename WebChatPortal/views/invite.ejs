@@ -2,14 +2,23 @@
 <head>
 <title>Invite</title>
 </head>
+<link rel="stylesheet" href="/invite.css"/>
 <body>
-<h1>Invite your friends:</h1>
-<form action="/invite" method="POST"> 
-<label>Enter email id here:
-<input type="email" name="mail" placeholder="abc@gmail.com"/>
-</label>
+<div class="user">
+<h1 class="user__title">Invite your friends:</h1>
+<a href="/"><button class="btn">HOME</button></a>
+<% if(typeof name=="undefined"){ %>
+<form action="/invite" method="POST" class="form"> 
+<div class="form__group">
+<input type="email" name="mail" placeholder="abc@gmail.com" class="form__input"/>
+    </div>
 <input type="hidden" name="nam" value="<%= user%>" />    
-<input type="submit" value="send"/>    
+<input type="submit" value="send" class="btn"/>    
 </form>
+<% } %>
+<% if(typeof name!="undefined"){ %>
+    <p>User already exists by username <%= name %> </p>
+<% } %>
+    </div>
 </body>
 </html>

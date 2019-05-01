@@ -1,21 +1,8 @@
 <html>
 <head>
 <title>New Password</title>   
-
-</head>
-<body>
-<form action="newpwd" method="post">
-  <label>  
-      New Password:
-      <input type="password" id="newpwd" name="newpwd"/>    
-  </label>
-   <label>  
-      Confirm New Password:
-      <input type="password" id="newpwd1"/>    
-  </label>
-    <input type="button" onclick="check()" value="Change"/> 
-</form>    
-<script>
+<link rel="stylesheet" href="/changepwd.css"/>
+    <script>
 function check(){
     form=document.getElementsByTagName("form");
     form=form[0];
@@ -30,10 +17,32 @@ function check(){
     }
     else{
         //error msg
-        res.redirect("/newpwd");
+        window.location.replace("http://localhost:4000/newpwd");
     }
         
-}    
+}
+    function check1(){
+    window.location.replace("http://localhost:4000/");
+    }
+        
+    
 </script>
+</head>
+<body>
+ 
+ <div class="user">
+     <img src="/done.png" height="200px" width="400px"/>
+     <input type="button" onclick="check1()" value="Home" class="btn"/>    
+<form action="newpwd" method="post" class="form">
+  <div class="form__group">
+      <input type="password" id="newpwd" name="newpwd" placeholder="New Password" class="form__input"/>    
+  </div>
+   <div class="form__group">
+      <input type="password" id="newpwd1"  placeholder="Confirm Password" class="form__input"/>    
+  </div>
+    <input type="button" onclick="check()" value="Change" class="btn"/> 
+</form>    
+</div>
+
 </body>
 </html>

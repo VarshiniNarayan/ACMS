@@ -1,14 +1,26 @@
 <html>
 <head>
-   <title>Me</title>    
+   <title>Me</title> 
+    <link rel="stylesheet" href="/personal.css"/>
 </head>
 <body>
-<ul>
-<li>Username:<%= user.username %></li>
-<li>Name:<%= user.name %></li>
-<li>Phone Number:<%= user.phone %></li>
-<li>Email:<%= user.email %></li>
-<li><a href="/newpwd">Change password</a></li>
-</ul>   
+    <a href="/"><input type="button" class</a>
+    <img src="/done.png" alt="" height="200px" width="400px"/>
+<table>
+	<tr>
+		<td colspan="3">
+			<div class="name"><%= user.name %></div>
+		</td>
+	</tr>
+	<tr>
+		<td class="details-td">
+			<div class="label">Username:</div><div class="phone"><%= user.username %></div>
+			<br><div class="label">Mobile:</div><div class="mobile"><%= user.phone %></div>
+			<br><div class="label">Email:</div><div class="email"><%= user.email %></div>
+            <a href="/newpwd"><button class="btn" type="button">Change Password</button></a>	
+		</td>
+	
+	</tr>
+</table>
 </body>
 </html>
